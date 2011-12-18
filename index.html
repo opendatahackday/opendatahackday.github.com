@@ -1,0 +1,22 @@
+---
+layout: default
+title: Hack Days in Germany
+---
+<h1>{{ page.title }}<span class="blink">▌</span></h1>
+<h2>Upcoming</h2>
+<ul class="posts">
+  {% for post in site.tags.upcoming reversed %}
+  	<li>
+  		<span>{{ post.date | date: "%d %h %Y" }} in {{ post.city }}</span> &gt; <a href="{{ post.url }}">{{ post.title }}</a>
+  	</li>
+  {% endfor %}
+</ul>
+
+<h2>Past</h2>
+<ul class="posts">
+  {% for post in site.tags.past %}
+    <li>
+    	<span>{{ post.date | date: "%d %h %Y" }} in {{ post.city }}</span> &gt; <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
